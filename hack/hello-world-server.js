@@ -18,9 +18,9 @@
     });
     
    
-    serialPort.on("open", function () {
+    serialPort.on("open", function (data) {
       console.log('open');
-      
+      console.log('data open: ' + data);
       serialPort.on('data', function(data) {
     	  console.log('data received: ' + data); 
     	 /* 
