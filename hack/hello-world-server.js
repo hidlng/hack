@@ -28,16 +28,18 @@
     		  console.log('data received: ' + status);  
     		  status = "";
     	  } else {
-    		  status += data;
-    		  console.log('data none: ' + status);
+    		  if( status.indexOf(data) < 0 ) {
+    			  status += data;
+    		  }
     	  }
 
     	  if( status == "+fall" ) {
     		  console.log('data received: ' + status);  
     		  status = "";
     	  } else {
-    		  status += data;
-    		  console.log('data none: ' + status);
+    		  if( status.indexOf(data) < 0 ) {
+    			  status += data;
+    		  }
     	  }
 
     		  
