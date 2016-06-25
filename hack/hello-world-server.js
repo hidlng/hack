@@ -23,7 +23,7 @@
       console.log('open');
       console.log('data open: ' + data);
  	 request({
-		  uri: "http://52.79.138.81/saint/worker/update?id="+id+"&status=2&img_cctv="+img_cctv+"&helmet="+helmet,
+		  uri: "http://192.168.43.26:8080/?id="+id+"&status=2&img_cctv="+img_cctv+"&helmet="+helmet,
 		  method: "GET"
 		  }, function(error, response, body) {
 			 console.log(response); 
