@@ -5,11 +5,7 @@
    var helmet = "";
    var SerialPort = require("serialport").SerialPort;
    var serialPort = new SerialPort("/dev/ttyAMA0", {
-      baudrate: 9600,
-      dataBits: 8, 
-      parity: 'none', 
-      stopBits: 1, 
-      flowControl: false 
+      baudrate: 9600
 
     });
     
