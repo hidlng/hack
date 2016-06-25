@@ -30,21 +30,21 @@
 	  
       serialPort.on('data', function(data) {
     	  var ss = (data + '');
-    	  if( ss.replace(/ /gi, "").replace(/\n/gi, "") == "+panic" ) {
+    	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+panic") >= 0 ) {
     		  console.log('data received: ' + data);
     	 	  
     	      request({
-    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=2",
+    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=2&img_cctv=1.jpg&helmet=1",
     			  method: "GET"
     			  }, function(error, response, body) {
     				 console.log(response); 
     			});
        	  }
-    	  if( ss.replace(/ /gi, "").replace(/\n/gi, "") == "+fall" ) {
+    	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+fall") >= 0 ) {
     		  console.log('data received: ' + data);
     	 	  
     	      request({
-    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=3",
+    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=3&img_cctv=1.jpg&helmet=1",
     			  method: "GET"
     			  }, function(error, response, body) {
     				 console.log(response); 
@@ -52,11 +52,11 @@
        	  }
 
     	  
-    	  if( ss.replace(/ /gi, "").replace(/\n/gi, "") == "+wakeup" ) {
+    	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+wakeup") >= 0 ) {
     		  console.log('data received: ' + data);
     	 	  
     	      request({
-    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=1",
+    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=1&img_cctv=1.jpg&helmet=1",
     			  method: "GET"
     			  }, function(error, response, body) {
     				 console.log(response); 
