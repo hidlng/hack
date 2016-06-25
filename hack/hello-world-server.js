@@ -12,6 +12,9 @@
       baudrate: 115200
     });
 
+
+
+
     serialPort.on("open", function (data) {
       console.log('open');
       serialPort.on('data', function(data) {
@@ -23,15 +26,15 @@
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=2",
     			  method: "GET"
     			  }, function(error, response, body) {
-    	    	      request({
-    	    			  uri: "http://192.168.43.26:8000/alarm",
-    	    			  method: "GET"
-    	    			  }, function(error, response, body) {
-    	    				  console.log("2"); 
-    	    			});
+    				  console.log("2"); 
     			});
     	      
-
+    	      request({
+    			  uri: "http://192.168.43.26:8000/alarm",
+    			  method: "GET"
+    			  }, function(error, response, body) {
+    				  
+    			});
        	  }
     	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+fall") >= 0 ) {
     		  console.log('data received: ' + data);
@@ -40,15 +43,15 @@
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=3",
     			  method: "GET"
     			  }, function(error, response, body) {
-    	    	      request({
-    	    			  uri: "http://192.168.43.26:8000/alarm",
-    	    			  method: "GET"
-    	    			  }, function(error, response, body) {
-    	    				  console.log("3"); 
-    	    			});
+    				  console.log("3");
     			});
     	      
-
+    	      request({
+    			  uri: "http://192.168.43.26:8000/alarm",
+    			  method: "GET"
+    			  }, function(error, response, body) {
+    				   
+    			});
        	  }
 
     	  
@@ -73,7 +76,7 @@
       });
 
     });
-    
+
     app.get('/take', function (req, res) {
         exec(cmd, function(error, stdout, stderr) {
           fs.readFile('/home/pi/photo/now.jpg', function (err, data) {
@@ -84,7 +87,7 @@
         });
       });
     
-    app.listen(6000000, function() {
+    app.listen(600000, function() {
  	   console.log("listening 8000");
  	 });
     
