@@ -13,7 +13,7 @@
     	  
     	  request({
 			  uri: "http://52.79.138.81/saint/worker/update",
-			  method: "POST",
+			  method: "GET",
 			  form: {
 				  id: "1",
 				  status: "3",
