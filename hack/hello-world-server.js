@@ -6,7 +6,4 @@ var serial = new SerialPort('/dev/ttyAMA0', {
 	parser: serialport.parsers.readline("\n")
 }) ; 
 
-
-serial.on('data', function(data) { 
-	console.log(data.toString()) ; 
-}) ; 
+console.log(serial.toString());
