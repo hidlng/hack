@@ -1,13 +1,17 @@
-var serialport = require('serialport') ; 
-var SerialPort = serialport.SerialPort; 
-
-var serial = new SerialPort('/dev/ttyAMA0', { 
-	baudrate : 9600,
-	parser: serialport.parsers.readline("\n")
-}) ; 
-
-
-serial.on('data', function(data) { 
-	console.log("123");
-	console.log(data.toString()) ; 
-}) ; 
+   var SerialPort = require("serialport").SerialPort;
+    var serialPort = new SerialPort("/dev/ttyACM0", {
+      baudrate: 9600
+    });
+    
+    serialPort.on("open", function () {
+      console.log('open');
+      
+      serialPort.on('data', function(data) {
+        console.log('data received: ' + data);
+      });
+      
+      serialPort.write(new Buffer('4','ascii'), function(err, results) {
+        console.log('err ' + err);
+        console.log('results ' + results);
+      });
+    });
