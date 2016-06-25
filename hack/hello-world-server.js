@@ -34,7 +34,7 @@
     		  console.log('data received: ' + data);
     	 	  
     	      request({
-    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=2&img_cctv=1.jpg&helmet=1",
+    			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=2",
     			  method: "GET"
     			  }, function(error, response, body) {
     				 console.log(response); 
@@ -44,7 +44,7 @@
     		  console.log('data received: ' + data);
     	 	  
     	      request({
-    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=3&img_cctv=1.jpg&helmet=1",
+    			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=3",
     			  method: "GET"
     			  }, function(error, response, body) {
     				 console.log(response); 
@@ -56,7 +56,7 @@
     		  console.log('data received: ' + data);
     	 	  
     	      request({
-    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=1&img_cctv=1.jpg&helmet=1",
+    			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=1",
     			  method: "GET"
     			  }, function(error, response, body) {
     				 console.log(response); 
