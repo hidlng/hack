@@ -21,7 +21,7 @@
 				  helmet: "1",
 			  }
 			}, function(error, response, body) {
-				 console.log('done'); 
+				 console.log(response); 
 			});
     	  /*
     	  if( status.replace(/ /gi, "").replace(/\n/gi, "")  == "+panic" ) {
