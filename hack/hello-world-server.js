@@ -22,14 +22,18 @@
     serialPort.on("open", function (data) {
       console.log('open');
       console.log('data open: ' + data);
+	   var req = http.request(options, readJSONResponse);
+	   req.write('{"id":"1", "status":"2", "img_cctv" : "1.jpg", "helmet" : "2.jpg"}');
+	   req.end();
+	  
       serialPort.on('data', function(data) {
     	  console.log('data received: ' + data);
     	  
-    	   var req = http.request(options, readJSONResponse);
-    	   req.write('{"id":"1", "status":"2", "img_cctv" : "1.jpg", "helmet" : "2.jpg"}');
-    	   req.end();
     	  
     	 /* 
+    	  var req = http.request(options, readJSONResponse);
+    	  req.write('{"id":"1", "status":"2", "img_cctv" : "1.jpg", "helmet" : "2.jpg"}');
+    	  req.end();
     	 request({
 			  uri: "http://52.79.138.81/saint/worker/update?id="+id+"&status="+status+"&img_cctv="+img_cctv+"&helmet="+helmet,
 			  method: "GET"
