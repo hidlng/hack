@@ -14,7 +14,7 @@
 */
 
    var serialPort = new SerialPort("/dev/ttyAMA0", {
-      baudrate: 9600
+      baudrate: 115200
     });
     
    
