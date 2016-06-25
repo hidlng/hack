@@ -4,8 +4,13 @@
    var img_cctv="";
    var helmet = "";
    var SerialPort = require("serialport").SerialPort;
-   var serialPort = new SerialPort("/dev/ttyACM1", {
-      baudrate: 9600
+   var serialPort = new SerialPort("/dev/ttyAMA0", {
+      baudrate: 9600,
+      dataBits: 8, 
+      parity: 'none', 
+      stopBits: 1, 
+      flowControl: false 
+
     });
     
     serialPort.on("open", function () {
