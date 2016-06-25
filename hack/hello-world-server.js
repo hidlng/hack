@@ -12,22 +12,8 @@
       baudrate: 115200
     });
 
-   app.get('/take', function (req, res) {
-     exec(cmd, function(error, stdout, stderr) {
-       fs.readFile('/home/pi/photo/now.jpg', function (err, data) {
-         if (err) throw err;
-         res.write(data);
-         res.end();
-       });
-     });
-   });
-
-
     serialPort.on("open", function (data) {
       console.log('open');
-      console.log('data open: ' + data);
-
-	  
       serialPort.on('data', function(data) {
     	  var ss = (data + '');
     	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+panic") >= 0 ) {
@@ -88,7 +74,17 @@
 
     });
     
-    app.listen(600000, function() {
+    app.get('/take', function (req, res) {
+        exec(cmd, function(error, stdout, stderr) {
+          fs.readFile('/home/pi/photo/now.jpg', function (err, data) {
+            if (err) throw err;
+            res.write(data);
+            res.end();
+          });
+        });
+      });
+    
+    app.listen(6000000, function() {
  	   console.log("listening 8000");
  	 });
     
