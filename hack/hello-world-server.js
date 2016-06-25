@@ -22,7 +22,7 @@
 			  }
 			}, function(error, response, body) {
 				
-			});*/
+			});
     	  
     	  if( status.replace(/ /gi, "").replace(/\n/gi, "")  == "+panic" ) {
     		  console.log('data received: ' + status);  
@@ -42,8 +42,8 @@
     			  status += data;
     			  console.log('data yet: ' + status); 
     		  }
-    	  }
-
+    	  }*/
+    	  console.log('data yet: ' + data); 
     		  
       });
       
