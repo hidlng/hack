@@ -69,6 +69,11 @@
       });
 
 
+      serialPort.on('close', function(){
+    	    console.log('Serial PORT CLOSED');
+    	    reconnectArd();
+    	  });
+      
     });
 
     // check for connection errors or drops and reconnect
