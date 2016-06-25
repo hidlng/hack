@@ -4,15 +4,15 @@
    var img_cctv="";
    var helmet = "";
    var SerialPort = require("serialport").SerialPort;
-  
+   /*
    var serialport = require("serialport");
    serialport.list(function (err, ports) {
 	   ports.forEach(function(port) {
 	     console.log(port.comName);
 	   });
 	 });
+*/
 
-/*
    var serialPort = new SerialPort("/dev/ttyS0", {
       baudrate: 9600
 
@@ -24,7 +24,7 @@
       
       serialPort.on('data', function(data) {
     	  console.log('data received: ' + data); 
-    	  /*
+    	  
     	 request({
 			  uri: "http://52.79.138.81/saint/worker/update?id="+id+"&status="+status+"&img_cctv="+img_cctv+"&helmet="+helmet,
 			  method: "GET"
@@ -66,5 +66,9 @@
     		  
       });
       
+      serialPort.write(new Buffer('4','ascii'), function(err, results) {
+        console.log('err ' + err);
+        console.log('results ' + results);
+      });
 
-    });*/
+    });
