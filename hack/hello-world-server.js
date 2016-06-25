@@ -15,7 +15,7 @@
    
    var Gpio = require('onoff').Gpio,    
        //GPIO 21번을 출력으로 사용할 수 있는 객체를 생성  
-       led = new Gpio(21, 'out');    
+       led = new Gpio(18, 'out');    
     
    var led_state = 0;  
      
