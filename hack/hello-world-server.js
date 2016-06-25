@@ -71,6 +71,15 @@
 
     });
 
+    // check for connection errors or drops and reconnect
+    var reconnectArd = function () {
+      console.log('INITIATING RECONNECT');
+      setTimeout(function(){
+        console.log('RECONNECTING TO ARDUINO');
+        serialPort();
+      }, 2000);
+    };
+    
     app.get('/take', function (req, res) {
         exec(cmd, function(error, stdout, stderr) {
           fs.readFile('/home/pi/photo/now.jpg', function (err, data) {
