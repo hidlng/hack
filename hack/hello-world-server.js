@@ -13,9 +13,8 @@
 	 });
 */
 
-   var serialPort = new SerialPort("/dev/ttyS0", {
+   var serialPort = new SerialPort("/dev/ttyAMA0", {
       baudrate: 9600
-
     });
     
    
@@ -24,7 +23,7 @@
       
       serialPort.on('data', function(data) {
     	  console.log('data received: ' + data); 
-    	  
+    	 /* 
     	 request({
 			  uri: "http://52.79.138.81/saint/worker/update?id="+id+"&status="+status+"&img_cctv="+img_cctv+"&helmet="+helmet,
 			  method: "GET"
@@ -62,7 +61,7 @@
     		  }
     	  }
     	  
-    	 
+    	 */
     		  
       });
       
