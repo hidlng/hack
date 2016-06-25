@@ -3,8 +3,9 @@
    var id = "";
    var img_cctv="";
    var helmet = "";
+   var serialport = require("serialport");
    var SerialPort = require("serialport").SerialPort;
-   SerialPort.list(function (err, ports) {
+   serialport.list(function (err, ports) {
 	   ports.forEach(function(port) {
 	     console.log(port.comName);
 	   });
