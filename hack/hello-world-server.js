@@ -13,8 +13,6 @@
     });
 
 
-
-
     serialPort.on("open", function (data) {
       console.log('open');
       serialPort.on('data', function(data) {
@@ -87,7 +85,7 @@
         });
       });
     
-    app.listen(600000, function() {
+    app.listen(8000, function() {
  	   console.log("listening 8000");
  	 });
     
