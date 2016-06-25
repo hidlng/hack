@@ -9,21 +9,21 @@
       console.log('open');
       
       serialPort.on('data', function(data) {
-    	  data = data.replace(/ /gi, "").replace(/\n/gi, "");
-    		  /*
+    	  
+    	  
     	  request({
 			  uri: "http://52.79.138.81/saint/worker/update",
 			  method: "POST",
 			  form: {
-				  id: "Bob",
-				  status: "Bob",
-				  img_cctv: "Bob",
-				  helmet: "Bob",
+				  id: "1",
+				  status: "3",
+				  img_cctv: "1.jpg",
+				  helmet: "1",
 			  }
 			}, function(error, response, body) {
-				
+				 console.log('done'); 
 			});
-    	  
+    	  /*
     	  if( status.replace(/ /gi, "").replace(/\n/gi, "")  == "+panic" ) {
     		  console.log('data received: ' + status);  
     		  status = "";
@@ -54,7 +54,7 @@
     		  }
     	  }
     	  */
-    	  console.log('data yet: ' + data); 
+    	 
     		  
       });
       
