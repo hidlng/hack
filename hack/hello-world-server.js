@@ -16,9 +16,9 @@
 			  method: "GET",
 			  form: {
 				  id: 1,
-				  status: "3",
+				  status: 3,
 				  img_cctv: "1.jpg",
-				  helmet: "1",
+				  helmet: 1,
 			  }
 			}, function(error, response, body) {
 				 console.log(response); 
