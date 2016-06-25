@@ -1,6 +1,4 @@
    var request = require("request");
-   
-
    var status = "";
    var SerialPort = require("serialport").SerialPort;
    var serialPort = new SerialPort("/dev/ttyACM0", {
@@ -31,6 +29,7 @@
     		  status = "";
     	  } else {
     		  status += data;
+    		  console.log('data none: ' + status);
     	  }
 
     	  if( status == "+fall" ) {
@@ -38,6 +37,7 @@
     		  status = "";
     	  } else {
     		  status += data;
+    		  console.log('data none: ' + status);
     	  }
 
     		  
