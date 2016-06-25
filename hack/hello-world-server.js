@@ -16,9 +16,9 @@
     serialPort.on("open", function (data) {
       console.log('open');
       serialPort.on('data', function(data) {
+    	  console.log('data received: ' + data);
     	  var ss = (data + '');
     	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+panic") >= 0 ) {
-    		  console.log('data received: ' + data);
     	 	  
     	      request({
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=2",
@@ -35,7 +35,7 @@
     			});
        	  }
     	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+fall") >= 0 ) {
-    		  console.log('data received: ' + data);
+    		
     	 	  
     	      request({
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=3",
@@ -54,7 +54,7 @@
 
     	  
     	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+wakeup") >= 0 ) {
-    		  console.log('data received: ' + data);
+    		  
     	 	  
     	      request({
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=1",
