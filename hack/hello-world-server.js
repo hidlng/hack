@@ -75,6 +75,11 @@
     	    reconnectArd();
     	  });
       
+      serialPort.on('error', function(){
+  	    console.log('Serial PORT error');
+  	    reconnectArd();
+  	  });
+      
     });
    }
 
