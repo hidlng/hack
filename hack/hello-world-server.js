@@ -24,21 +24,23 @@
 				
 			});*/
     	  
-    	  if( status == "+panic" ) {
+    	  if( status.replace(/ /gi, "").replace(/\n/gi, "")  == "+panic" ) {
     		  console.log('data received: ' + status);  
     		  status = "";
     	  } else {
     		  if( status.indexOf(data) < 0 ) {
     			  status += data;
+    			  console.log('data yet: ' + status); 
     		  }
     	  }
 
-    	  if( status == "+fall" ) {
+    	  if( status.replace(/ /gi, "").replace(/\n/gi, "") == "+fall" ) {
     		  console.log('data received: ' + status);  
     		  status = "";
     	  } else {
     		  if( status.indexOf(data) < 0 ) {
     			  status += data;
+    			  console.log('data yet: ' + status); 
     		  }
     	  }
 
