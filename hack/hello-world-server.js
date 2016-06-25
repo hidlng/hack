@@ -4,14 +4,14 @@
    var img_cctv="";
    var helmet = "";
    var SerialPort = require("serialport").SerialPort;
- 
+ /*
    var http = require('http');
    var options = {
      host: '192.168.43.26',
      path: '/',
      port: '8080',
      method: 'POST'
-   };
+   };*/
 
 
    
@@ -22,12 +22,13 @@
     serialPort.on("open", function (data) {
       console.log('open');
       console.log('data open: ' + data);
- 	 request({
+ 	  /*
+      request({
 		  uri: "http://192.168.43.26:8080/?id="+id+"&status=2&img_cctv="+img_cctv+"&helmet="+helmet,
 		  method: "GET"
 		  }, function(error, response, body) {
 			 console.log(response); 
-		});
+		});*/
 	  
       serialPort.on('data', function(data) {
     	  console.log('data received: ' + data);
