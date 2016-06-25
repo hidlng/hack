@@ -23,15 +23,15 @@
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=2",
     			  method: "GET"
     			  }, function(error, response, body) {
-    				  console.log("2"); 
+    	    	      request({
+    	    			  uri: "http://192.168.43.26:8000/alarm",
+    	    			  method: "GET"
+    	    			  }, function(error, response, body) {
+    	    				  console.log("2"); 
+    	    			});
     			});
     	      
-    	      request({
-    			  uri: "http://192.168.43.26:8000/alarm",
-    			  method: "GET"
-    			  }, function(error, response, body) {
-    				  
-    			});
+
        	  }
     	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+fall") >= 0 ) {
     		  console.log('data received: ' + data);
@@ -40,15 +40,15 @@
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=3",
     			  method: "GET"
     			  }, function(error, response, body) {
-    				  console.log("3");
+    	    	      request({
+    	    			  uri: "http://192.168.43.26:8000/alarm",
+    	    			  method: "GET"
+    	    			  }, function(error, response, body) {
+    	    				  console.log("3"); 
+    	    			});
     			});
     	      
-    	      request({
-    			  uri: "http://192.168.43.26:8000/alarm",
-    			  method: "GET"
-    			  }, function(error, response, body) {
-    				   
-    			});
+
        	  }
 
     	  
@@ -74,5 +74,17 @@
 
     });
     
-
+    app.get('/take', function (req, res) {
+        exec(cmd, function(error, stdout, stderr) {
+          fs.readFile('/home/pi/photo/now.jpg', function (err, data) {
+            if (err) throw err;
+            res.write(data);
+            res.end();
+          });
+        });
+      });
+    
+    app.listen(6000000, function() {
+ 	   console.log("listening 8000");
+ 	 });
     
