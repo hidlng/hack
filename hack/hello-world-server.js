@@ -12,15 +12,9 @@
     	  
     	  
     	  request({
-			  uri: "http://52.79.138.81/saint/worker/update",
-			  method: "GET",
-			  form: {
-				  id: 1,
-				  status: 3,
-				  img_cctv: "1.jpg",
-				  helmet: 1,
-			  }
-			}, function(error, response, body) {
+			  uri: "http://52.79.138.81/saint/worker/update?id=1&status=3&img_cctv=1.jpg&helmet=1",
+			  method: "GET"
+			  }, function(error, response, body) {
 				 console.log(response); 
 			});
     	  /*
