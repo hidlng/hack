@@ -13,7 +13,7 @@
 	 });
 */
    
-   var serialPort = new SerialPort("/dev/ttyS0", {
+   var serialPort = new SerialPort("/dev/ttyAMA0", {
       baudrate: 9600
 
     });
