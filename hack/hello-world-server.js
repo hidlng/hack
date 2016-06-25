@@ -55,8 +55,5 @@
     		  
       });
       
-      serialPort.write(new Buffer('120','ascii'), function(err, results) {
-        console.log('err ' + err);
-        console.log('results ' + results);
-      });
+
     });
