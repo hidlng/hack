@@ -74,17 +74,5 @@
 
     });
     
-    app.get('/take', function (req, res) {
-        exec(cmd, function(error, stdout, stderr) {
-          fs.readFile('/home/pi/photo/now.jpg', function (err, data) {
-            if (err) throw err;
-            res.write(data);
-            res.end();
-          });
-        });
-      });
-    
-    app.listen(6000000, function() {
- 	   console.log("listening 8000");
- 	 });
+
     
