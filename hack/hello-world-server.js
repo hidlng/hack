@@ -1,5 +1,8 @@
    var request = require("request");
    var status = "";
+   var id = "";
+   var img_cctv="";
+   var helmet = "";
    var SerialPort = require("serialport").SerialPort;
    var serialPort = new SerialPort("/dev/ttyACM0", {
       baudrate: 9600
@@ -9,15 +12,14 @@
       console.log('open');
       
       serialPort.on('data', function(data) {
-    	  
-    	  
-    	  request({
-			  uri: "http://52.79.138.81/saint/worker/update?id=1&status=3&img_cctv=1.jpg&helmet=1",
+    	  console.log('data received: ' + data); 
+    	  /*request({
+			  uri: "http://52.79.138.81/saint/worker/update?id="+id+"&status="+status+"&img_cctv="+img_cctv+"&helmet="+helmet,
 			  method: "GET"
 			  }, function(error, response, body) {
 				 console.log(response); 
 			});
-    	  /*
+    	 
     	  if( status.replace(/ /gi, "").replace(/\n/gi, "")  == "+panic" ) {
     		  console.log('data received: ' + status);  
     		  status = "";
