@@ -22,6 +22,9 @@
      });
    });
 
+   app.listen(8000, function() {
+	   console.log("listening 8000");
+	 });
    
     serialPort.on("open", function (data) {
       console.log('open');
@@ -29,39 +32,38 @@
 
 	  
       serialPort.on('data', function(data) {
-    	 
-    	  if( data.replace(/ /gi, "").replace(/\n/gi, "") == "+panic" ) {
+    	  var ss = (data + '');
+    	  if( ss.replace(/ /gi, "").replace(/\n/gi, "") == "+panic" ) {
     		  console.log('data received: ' + data);
-    	 	  /*
+    	 	  
     	      request({
-    			  uri: "http://192.168.43.26:8080/?id="+id+"&status=2&img_cctv="+img_cctv+"&helmet="+helmet,
+    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=2",
     			  method: "GET"
     			  }, function(error, response, body) {
     				 console.log(response); 
-    			});*/
+    			});
        	  }
-    	  
-    	  if( data.replace(/ /gi, "").replace(/\n/gi, "") == "+fall" ) {
+    	  if( ss.replace(/ /gi, "").replace(/\n/gi, "") == "+fall" ) {
     		  console.log('data received: ' + data);
-    	 	  /*
+    	 	  
     	      request({
-    			  uri: "http://192.168.43.26:8080/?id="+id+"&status=2&img_cctv="+img_cctv+"&helmet="+helmet,
+    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=3",
     			  method: "GET"
     			  }, function(error, response, body) {
     				 console.log(response); 
-    			});*/
+    			});
        	  }
 
     	  
-    	  if( data.replace(/ /gi, "").replace(/\n/gi, "") == "+wakeup" ) {
+    	  if( ss.replace(/ /gi, "").replace(/\n/gi, "") == "+wakeup" ) {
     		  console.log('data received: ' + data);
-    	 	  /*
+    	 	  
     	      request({
-    			  uri: "http://192.168.43.26:8080/?id="+id+"&status=2&img_cctv="+img_cctv+"&helmet="+helmet,
+    			  uri: "http://52.79.138.81/saint/worker/update/?id=1&status=1",
     			  method: "GET"
     			  }, function(error, response, body) {
     				 console.log(response); 
-    			});*/
+    			});
        	  }
     	  
     	
