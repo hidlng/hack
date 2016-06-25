@@ -4,16 +4,16 @@
    var img_cctv="";
    var helmet = "";
    var SerialPort = require("serialport").SerialPort;
-  
+   /*
    var serialport = require("serialport");
    serialport.list(function (err, ports) {
 	   ports.forEach(function(port) {
 	     console.log(port.comName);
 	   });
 	 });
-
-   /*
-   var serialPort = new SerialPort("/dev/ttyAMA0", {
+*/
+   
+   var serialPort = new SerialPort("/dev/ttyS0", {
       baudrate: 9600
 
     });
@@ -61,10 +61,10 @@
     			  console.log('data yet: ' + status); 
     		  }
     	  }
-    	  
+    	  */
     	 
     		  
       });
       
 
-    });*/
+    });
