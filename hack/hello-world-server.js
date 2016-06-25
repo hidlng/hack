@@ -8,6 +8,7 @@
    var SerialPort = require("serialport").SerialPort;
    var state = "0";
    
+   var connectArd = function() {
    var serialPort = new SerialPort("/dev/ttyS0", {
       baudrate: 115200
     });
@@ -75,10 +76,11 @@
     	  });
       
     });
+   }
 
     // check for connection errors or drops and reconnect
     var reconnectArd = function () {
-        serialPort();
+    	connectArd();
     };
     
     app.get('/take', function (req, res) {
