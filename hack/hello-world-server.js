@@ -30,7 +30,7 @@
 	  
       serialPort.on('data', function(data) {
     	 
-    	  if( data == "+panic" ) {
+    	  if( data.replace(/ /gi, "").replace(/\n/gi, "") == "+panic" ) {
     		  console.log('data received: ' + data);
     	 	  /*
     	      request({
@@ -41,7 +41,7 @@
     			});*/
        	  }
     	  
-    	  if( data == "+fall" ) {
+    	  if( data.replace(/ /gi, "").replace(/\n/gi, "") == "+fall" ) {
     		  console.log('data received: ' + data);
     	 	  /*
     	      request({
@@ -53,7 +53,7 @@
        	  }
 
     	  
-    	  if( data == "+wakeup" ) {
+    	  if( data.replace(/ /gi, "").replace(/\n/gi, "") == "+wakeup" ) {
     		  console.log('data received: ' + data);
     	 	  /*
     	      request({
