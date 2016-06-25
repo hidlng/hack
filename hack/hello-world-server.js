@@ -78,6 +78,8 @@
     });
    }
 
+   connectArd();
+   
     // check for connection errors or drops and reconnect
     var reconnectArd = function () {
     	connectArd();
