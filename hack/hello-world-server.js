@@ -37,14 +37,14 @@
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=2",
     			  method: "GET"
     			  }, function(error, response, body) {
-    				 console.log(response); 
+    				  console.log("2"); 
     			});
     	      
     	      request({
     			  uri: "http://192.168.43.26:8000/alarm",
     			  method: "GET"
     			  }, function(error, response, body) {
-    				 console.log(response); 
+    				  
     			});
        	  }
     	  if( ss.replace(/ /gi, "").replace(/\n/gi, "").indexOf("+fall") >= 0 ) {
@@ -54,14 +54,14 @@
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=3",
     			  method: "GET"
     			  }, function(error, response, body) {
-    				 console.log(response); 
+    				  console.log("3");
     			});
     	      
     	      request({
     			  uri: "http://192.168.43.26:8000/alarm",
     			  method: "GET"
     			  }, function(error, response, body) {
-    				 console.log(response); 
+    				   
     			});
        	  }
 
@@ -73,7 +73,7 @@
     			  uri: "http://52.79.138.81/saint/worker/update/?id=3&status=1",
     			  method: "GET"
     			  }, function(error, response, body) {
-    				 console.log(response); 
+    				 console.log("1"); 
     			});
        	  }
     	  
